@@ -1,0 +1,58 @@
+<div id="menu" class="hidden-phone">
+			<div id="menuInner">
+				<div id="search">
+					<input type="text" placeholder="Quick search ..." />
+					<button class="glyphicons search"><i></i></button>
+				</div>
+				<div>
+				<p>
+					<a class="btn btn-danger btn-icon  compose" href="<?php echo base_url(); ?>compose/compose_for_technician">Compose For Technician</a> 
+				</p>
+				</div>
+				<div>
+				<p>
+					<a class="btn btn-danger btn-icon  compose" href="<?php echo base_url(); ?>compose/compose_for_customer">Compose For Customer</a> 
+				</p>
+				</div>
+				<div>
+				<p>
+					<a class="btn btn-danger btn-icon  compose" href="<?php echo base_url(); ?>compose/compose_for_activation">Send Activation Code</a> 
+				</p>
+				</div>
+				<ul>
+					
+					<li class="hasSubmenu">
+						<a class="glyphicons inbox_plus" href="<?php echo base_url(); ?>csv/machine_code_upload"><i></i><span>Upload Machine Codes</span></a>
+						
+					</li>	
+					<li class="hasSubmenu">
+						<a class="glyphicons inbox_plus" href="<?php echo base_url(); ?>complaint/complaint_list"><i></i><span>Compalints List</span></a>
+						
+					</li>
+					<li class="hasSubmenu">
+						<a class="glyphicons share" href="<?php echo base_url(); ?>complaint/complaint_forword"><i></i><span>Forword Compalints</span></a>
+						
+					</li>
+					
+					<li>
+						<a class="glyphicons group" href="<?php echo base_url(); ?>customer/customer_list"><i></i><span>Customer</span></a>
+
+					</li>
+					<li>
+						<a class="glyphicons group" href="<?php echo base_url(); ?>technician/technician_list"><i></i><span>Technician</span></a>
+
+					</li>
+					<li class="hasSubmenu">
+						<a class="glyphicons embed_close" href="<?php echo base_url(); ?>complaint_code/complaint_code_list"><i></i><span>Complaint Code</span></a>
+						
+					</li>
+					<li class="hasSubmenu">
+						<a class="glyphicons embed_close" href="<?php echo base_url(); ?>status_code/status_code_list"><i></i><span>Status Code</span></a>
+						
+					</li>
+
+					
+				<ul>
+					</ul>
+			</div>
+		</div>

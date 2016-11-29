@@ -1,0 +1,118 @@
+<?php
+
+class Gallery_m extends CI_Model {
+	//================== Constructer =====================
+	function __construct()
+    {
+    	parent::__construct();
+        $this->load->database();
+    }
+    //================== Constructer =====================
+
+	function validate()
+	{
+		$this->db->where('username', $this->input->post('username'));
+		$this->db->where('password', md5($this->input->post('password')));
+		$query = $this->db->get('membership');
+		
+		if($query->num_rows == 1)
+		{
+			return true;
+		}
+		
+	}
+//================== Create Gallery Fucntaion =====================	
+	function createGallery($data)
+	{
+		$insert = $this->db->insert('tbl_gallery', $data);
+
+		return $this->db->insert_id();
+	}
+	function createGalleryTitle($data)
+	{
+		$insert = $this->db->insert('tbl_language_in_gallery', $data);
+
+		return $this->db->insert_id();
+	}
+	
+//================== Create Gallery Fucntaion =====================	
+//================== edit Gallery by id Fucntaion =====================
+	function updateGalleryById($data,$id)
+	{
+		$this->db->where('gallery_id',$id);
+		$this->db->update('tbl_gallery',$data);
+	}
+		function updateGalleryInTitleById($data,$id)
+	{
+		$this->db->where('id',$id);
+		$this->db->update('tbl_language_in_gallery',$data);
+	}
+ //================== edit Gallery by id Fucntaion =====================
+ //================== Get Admin By Id Fucntaion =====================
+	function  getGalleryById($id){
+		$this->db->select();
+		$this->db->from('tbl_gallery');
+		$this->db->where('gallery_id',$id);
+		$query= $this->db->get();
+		return $query->result_array();
+	}
+ //================== Get Admin By Id Fucntaion =====================
+	 //================== Get Admin By Id Fucntaion =====================
+	function  getTitleInGalleryByGalleryId($id){
+		$this->db->select('lg.id as gallery_lang_pk_id,l.id as language_pk_id, lg.*, l.*');
+		$this->db->from('tbl_language_in_gallery lg');
+		$this->db->join ( 'tbl_language l', 'lg.language_id = l.language_id', 'inner' );
+		//$this->db->join ( 'tbl_gallery g', 'gt.gallery_id = g.gallery_id', 'rigth' );
+		$this->db->where('lg.gallery_id',$id);
+		$query= $this->db->get();
+		return $query->result_array();
+	}
+		function  getTitleInGalleryByGalleryTitleId($id){
+		$this->db->select('lg.id as gallery_lang_pk_id,l.id as language_pk_id, lg.*, l.*');
+		$this->db->from('tbl_language_in_gallery lg');
+		$this->db->join ( 'tbl_language l', 'lg.language_id = l.language_id', 'inner' );
+		//$this->db->join ( 'tbl_gallery g', 'gt.gallery_id = g.gallery_id', 'rigth' );
+		$this->db->where('lg.id',$id);
+		$query= $this->db->get();
+		return $query->result_array();
+	}
+	
+ //================== Get Admin By Id Fucntaion =====================
+//================== Get Admin By Id Fucntaion =====================
+	function  getLanguageList(){
+		$this->db->select();
+		$this->db->from('tbl_language');
+		$query= $this->db->get();
+		return $query->result_array();
+	}
+ //================== Get Admin By Id Fucntaion =====================
+	
+ //================== Get Admin By Id Fucntaion =====================
+	function  getGalleryAll($per_pg="",$offset=""){
+
+		$this->db->order_by('gallery_id','desc');
+		if ($per_pg>0)
+		{
+		$query=$this->db->get('tbl_gallery',$per_pg,$offset);	
+		}else{
+		$query=$this->db->get('tbl_gallery');
+		}
+		return $query->result_array();
+	}
+ //================== Get Admin By Id Fucntaion =====================
+ //================== Get Admin By Id Fucntaion =====================
+	function  countAllGallery(){
+		
+
+		return $this->db->count_all('tbl_gallery');
+	}
+ //================== Get Admin By Id Fucntaion =====================
+ //================== Get Admin By Id Fucntaion =====================
+	function  deleteGalleryById($gallery_id){
+	$this->db->where('gallery_id', $gallery_id)->delete('tbl_gallery');
+	return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
+	}
+ //================== Get Admin By Id Fucntaion =====================
+
+
+}

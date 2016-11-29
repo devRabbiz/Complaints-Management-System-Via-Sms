@@ -1,0 +1,27 @@
+[25-Feb-2014 23:42:19] PHP Fatal error:  Call to undefined method Main_m::getLatestDevice() in /home4/xorsat/public_html/demo/sms_system/system/libraries/Page_setting.php on line 186
+[25-Feb-2014 23:45:00] PHP Fatal error:  Call to undefined method Main_m::getLatestDevice() in /home4/xorsat/public_html/demo/sms_system/system/libraries/Page_setting.php on line 186
+[27-Feb-2014 14:45:41] PHP Fatal error:  Cannot use object of type stdClass as array in /home4/xorsat/public_html/demo/sms_system/application/controllers/service.php on line 76
+[27-Feb-2014 14:54:30] PHP Fatal error:  Cannot use object of type stdClass as array in /home4/xorsat/public_html/demo/sms_system/application/controllers/service.php on line 76
+[27-Feb-2014 15:03:17] PHP Fatal error:  Cannot use object of type stdClass as array in /home4/xorsat/public_html/demo/sms_system/application/controllers/service.php on line 76
+[27-Feb-2014 15:05:37] PHP Fatal error:  Cannot use object of type stdClass as array in /home4/xorsat/public_html/demo/sms_system/application/controllers/service.php on line 76
+[27-Feb-2014 15:18:35] PHP Fatal error:  Cannot use object of type stdClass as array in /home4/xorsat/public_html/demo/sms_system/application/controllers/service.php on line 76
+[27-Feb-2014 15:24:12] PHP Fatal error:  Cannot use object of type stdClass as array in /home4/xorsat/public_html/demo/sms_system/application/controllers/service.php on line 76
+[27-Feb-2014 16:06:10] PHP Fatal error:  Cannot use object of type stdClass as array in /home4/xorsat/public_html/demo/sms_system/application/controllers/service.php on line 76
+[27-Feb-2014 16:21:23] PHP Fatal error:  Cannot use object of type stdClass as array in /home4/xorsat/public_html/demo/sms_system/application/controllers/service.php on line 75
+[27-Feb-2014 16:27:31] PHP Parse error:  syntax error, unexpected T_IF in /home4/xorsat/public_html/demo/sms_system/application/controllers/service.php on line 74
+[27-Feb-2014 17:20:33] PHP Parse error:  syntax error, unexpected T_IF in /home4/xorsat/public_html/demo/sms_system/application/controllers/service.php on line 74
+[27-Feb-2014 17:20:45] PHP Parse error:  syntax error, unexpected T_IF in /home4/xorsat/public_html/demo/sms_system/application/controllers/service.php on line 74
+[27-Feb-2014 17:41:24] PHP Fatal error:  Call to undefined method Page_setting::check_device() in /home4/xorsat/public_html/demo/sms_system/application/controllers/service.php on line 21
+[27-Feb-2014 17:42:51] PHP Fatal error:  Call to undefined method Page_setting::check_device() in /home4/xorsat/public_html/demo/sms_system/application/controllers/service.php on line 21
+[27-Feb-2014 18:38:54] PHP Fatal error:  Cannot use string offset as an array in /home4/xorsat/public_html/demo/sms_system/application/controllers/service.php on line 70
+[13-Oct-2014 00:06:20 Asia/Karachi] PHP Parse error:  syntax error, unexpected '}' in /home4/xorsat/public_html/seeingpk.com/khi/application/controllers/service.php on line 169
+[13-Oct-2014 00:13:09 Asia/Karachi] PHP Parse error:  syntax error, unexpected '}' in /home4/xorsat/public_html/seeingpk.com/khi/application/controllers/service.php on line 169
+[14-Oct-2014 23:01:00 Asia/Karachi] PHP Parse error:  syntax error, unexpected '}' in /home4/xorsat/public_html/seeingpk.com/khi/application/controllers/service.php on line 169
+[14-Oct-2014 23:35:10 Asia/Karachi] PHP Parse error:  syntax error, unexpected '}' in /home4/xorsat/public_html/seeingpk.com/khi/application/controllers/service.php on line 169
+[14-Oct-2014 23:38:36 Asia/Karachi] PHP Parse error:  syntax error, unexpected ')', expecting '&' or variable (T_VARIABLE) in /home4/xorsat/public_html/seeingpk.com/khi/application/controllers/service.php on line 202
+[14-Oct-2014 23:38:39 Asia/Karachi] PHP Parse error:  syntax error, unexpected ')', expecting '&' or variable (T_VARIABLE) in /home4/xorsat/public_html/seeingpk.com/khi/application/controllers/service.php on line 202
+[14-Oct-2014 23:39:12 Asia/Karachi] PHP Fatal error:  Cannot redeclare Service_m::getTechnicianIdByNumber() in /home4/xorsat/public_html/seeingpk.com/khi/application/models/service_m.php on line 111
+[21-Oct-2014 10:29:13 Asia/Karachi] PHP Parse error:  syntax error, unexpected 'complaint' (T_STRING), expecting ',' or ';' in /home4/xorsat/public_html/seeingpk.com/khi/application/views/complaint_list.php on line 66
+[11-Dec-2014 01:39:27 Asia/Karachi] PHP Parse error:  syntax error, unexpected 'Pagination' (T_STRING), expecting ',' or ';' in /home4/xorsat/public_html/seeingpk.com/khi/application/views/machine_list.php on line 84
+[11-Dec-2014 01:39:56 Asia/Karachi] PHP Parse error:  syntax error, unexpected 'Pagination' (T_STRING), expecting ',' or ';' in /home4/xorsat/public_html/seeingpk.com/khi/application/views/machine_list.php on line 84
+[14-Jan-2015 00:44:31 Asia/Karachi] PHP Fatal error:  Call to a member function result_array() on a non-object in /home4/xorsat/public_html/seeingpk.com/khi/application/models/machine_m.php on line 55

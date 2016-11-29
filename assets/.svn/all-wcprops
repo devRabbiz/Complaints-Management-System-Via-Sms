@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/sms_system/!svn/ver/1/assets
+END
+custom_function.js
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/sms_system/!svn/ver/1/assets/custom_function.js
+END
+._theme
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/sms_system/!svn/ver/1/assets/._theme
+END
+._documentation
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/sms_system/!svn/ver/1/assets/._documentation
+END
+._bootstrap
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/sms_system/!svn/ver/1/assets/._bootstrap
+END
+._.DS_Store
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/sms_system/!svn/ver/1/assets/._.DS_Store
+END

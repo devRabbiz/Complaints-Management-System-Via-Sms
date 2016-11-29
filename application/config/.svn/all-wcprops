@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/sms_system/!svn/ver/1/application/config
+END
+pagination.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sms_system/!svn/ver/1/application/config/pagination.php
+END
+database.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sms_system/!svn/ver/1/application/config/database.php
+END
+ci_config.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sms_system/!svn/ver/1/application/config/ci_config.php
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sms_system/!svn/ver/1/application/config/index.html
+END
+mimes.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/sms_system/!svn/ver/1/application/config/mimes.php
+END
+doctypes.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sms_system/!svn/ver/1/application/config/doctypes.php
+END
+config.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sms_system/!svn/ver/1/application/config/config.php
+END
+user_agents.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sms_system/!svn/ver/1/application/config/user_agents.php
+END
+smileys.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/sms_system/!svn/ver/1/application/config/smileys.php
+END
+profiler.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sms_system/!svn/ver/1/application/config/profiler.php
+END
+routes.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sms_system/!svn/ver/1/application/config/routes.php
+END
+migration.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sms_system/!svn/ver/1/application/config/migration.php
+END
+constants.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sms_system/!svn/ver/1/application/config/constants.php
+END
+hooks.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/sms_system/!svn/ver/1/application/config/hooks.php
+END
+foreign_chars.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sms_system/!svn/ver/1/application/config/foreign_chars.php
+END
+autoload.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sms_system/!svn/ver/1/application/config/autoload.php
+END

@@ -1,0 +1,97 @@
+<?php
+
+class Customer extends CI_Controller 
+{
+	function __construct()
+	{
+		parent::__construct();
+	  $this->load->model('customer_m');
+    $this->load->library("pagination");
+    $this->load->library ("page_setting");
+	}
+
+	function index()
+	{
+    $this->customer_list;
+	}
+//==============================================================
+//**************************************************************
+//==============================================================	
+	function customer_list()
+	{
+    $limit = 10;
+    $offset=$this->uri->segment(3);
+    $config['total_rows'] = $this->customer_m->countAllCustomer();
+    $config['base_url'] = site_url('/customer/customer_list/');
+    $config['per_page'] = $limit;
+    $data=$this->customer_m->getCustomerAll($limit, $offset);
+    $this->pagination->initialize($config);
+  
+    $this->page_setting->Pagination = $this->pagination->create_links();
+    $this->page_setting->control_page( $data );
+	}
+//==============================================================
+//**************************************************************
+//==============================================================
+	function customer_add($data="")
+	{
+    if ($_POST) {
+       $data = $_POST;
+       $data ['customer_date_insert'] =  date('Y-m-d H:i:s');
+       $data['customer_id'] = $this->page_setting->get_uniq_id("tbl_customer");
+       $id = $this->customer_m->customerAdd($data);
+       $this->page_setting->check_confrim($id,"customer/customer_list");
+    }
+    else{
+		$this->page_setting->control_page( $data="" );    
+		}
+	}
+//==============================================================
+//**************************************************************
+//==============================================================  
+	function customer_edit() // just for sample
+	{
+   // echo $id;
+    $customer_id_decode=$this->page_setting->first_auto_decoded_id;
+    if ($_POST) {
+       $data = $_POST;
+       $data ['customer_date_update'] =  date('Y-m-d H:i:s');
+       $id = $this->customer_m->updateCustomerById($data,$customer_id_decode);
+       $this->page_setting->check_confrim($id,"customer/customer_list");
+     }
+    $data= $this->customer_m->getCustomerById($customer_id_decode);
+   $this->page_setting->control_page($data); 
+	}
+//==============================================================
+//**************************************************************
+//==============================================================
+    function customer_view() // just for sample
+  {
+   // echo $id;
+    $customer_id_decode=$this->page_setting->first_auto_decoded_id;
+    if ($_POST) {
+       $data = $_POST;
+       $data ['customer_date_update'] =  date('Y-m-d H:i:s');
+       $id = $this->customer_m->updateCustomerById($data,$customer_id_decode);
+       $this->page_setting->check_confrim($id,"customer/customer_list");
+     }
+    $data= $this->customer_m->getCustomerById($customer_id_decode);
+   $this->page_setting->control_page($data); 
+  }
+//==============================================================
+//**************************************************************
+//==============================================================
+    function customer_delete()
+    {
+      $id = $this->input->post("id");
+      $delete_record = $this->customer_m->deleteCustomerById($id);
+       if ($delete_record >0) {
+              
+              echo json_encode($id );
+               } else {
+               }
+    }
+//==============================================================
+//**************************************************************
+//==============================================================
+}

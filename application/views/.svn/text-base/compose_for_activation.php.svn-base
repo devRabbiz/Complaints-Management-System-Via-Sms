@@ -1,0 +1,86 @@
+<div id="content">
+
+	<?php
+/*	echo "<pre>";
+	print_r($list);
+	exit(); */
+	 ?>
+	
+<div class="separator"></div>
+<div class="heading-buttons">
+	<h3 class="glyphicons sort"><i></i> Customer List For Activation Code</h3>
+
+</div>
+
+							
+<?php 
+if ($list['Previous_fucntion'] == "customer_add") {
+	echo '<div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert">×</button>'.
+ $list['Page_message']['add'].'</div>';
+}elseif ($list['Previous_fucntion'] == "customer_edit") {
+	
+	echo '<div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert">×</button>'.
+ $list['Page_message']['edit'].'</div>';
+}
+; 
+?>
+<div id="mess"></div>	
+<div class="separator"></div>
+
+<div class="innerLR">
+	<form action="<?php base_url('compose/compose_for_Activation'); ?>" method="post">
+	
+	<div class="separator top form-inline small">
+		  	<div class="pull-left checkboxs_actions hide">
+		  	
+			<label class="strong">Type Code </label>
+		<input type="text" name="customer_activation_code" id="customer_activation_code" class="span6" placeholder="Activation Code for Customer">
+		<span style="margin: 0;" class="btn-action single glyphicons circle_question_mark" data-toggle="tooltip" data-placement="top" data-original-title="Leave empty if you don't wish to change the password"><i></i></span>
+		
+		<button type="submit"  class="compose_submit_top btn btn-icon btn-primary glyphicons circle_ok share"><i></i>Forword To Customer</button>
+	</div> 
+		<div class="clearfix"></div>
+	</div>
+		<table class=" table-bordered table-condensed table-striped table-vertical-center checkboxs js-table-sortable">
+		<thead>
+			<tr>
+				<th style="width: 1%;" class="uniformjs"><input type="checkbox" /></th>
+				<th style="width: 1%;" class="center">No.</th>
+				<th>Company</th>
+				
+				<th class="center">Author</th>
+				<th class="center" >Address</th>
+				<th class="center" >Phone</th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php 
+			$a=0;
+			foreach ($list['row'] as $key => $value) { 
+				  $base_64_role = base64_encode($value['customer_id']);
+                  $url_param = rtrim($base_64_role, '=');
+             $phone = explode(",",$value['customer_phone']); 
+             $address = substr($value['customer_address'], 0,120);  
+			echo '
+			<tr class="selectable" id="'.$value['customer_id'].'">
+				<td class="center uniformjs">
+					<input type="checkbox" name="customer_id[]"  value="'.$value['customer_id'].'" />
+				</td>
+				<td class="center">'.$key.'</td>
+				<td><a href="'.base_url().'customer/customer_view/'.$url_param.'" ><strong>'.$value['customer_name_company'].'</strong></a></td>
+				<td class="center important">'.$value['customer_name'].'</td>
+				<td class="center" >'.$address.'</td>
+				<td class="center" >'.$phone['0'].'</span></td>
+			</tr>'; }	?>
+		
+					</tbody>
+	</table>
+	
+</form>
+	
+</div>
+<br/>		
+				<!-- End Content -->
+		</div>

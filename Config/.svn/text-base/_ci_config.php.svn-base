@@ -1,0 +1,49 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/*
+|--------------------------------------------------------------------------
+| File and Directory Modes
+|--------------------------------------------------------------------------
+|
+| These prefs are used when checking and setting modes when working
+| with the file system.  The defaults are fine on servers with proper
+| security, but you may wish (or even need) to change the values in
+| certain environments (Apache running a separate process for each
+| user, PHP under CGI with Apache suEXEC, etc.).  Octal values should
+| always be used to set the mode correctly.
+|
+*/
+// db_name info
+define('HOSTNAME', "localhost");
+define('SQLUSER_NAME', "root");
+define('USER_PASSWORD', "");
+define('DATABASE_NAME', "db_gallery_picture");
+
+// language info
+// language value must be in small letters
+define('LANGUAGE', 'english');
+
+// News info
+define('NEWS_HOST_PATH', 'http://10.0.0.81/NewsApp');
+define('NEWS_ROOT_PATH', '/admin_en/uploads/');
+define('IMAGE_BIG_PATH', NEWS_HOST_PATH.NEWS_ROOT_PATH.'big/');
+define('IMAGE_SMALL_PATH', NEWS_HOST_PATH.NEWS_ROOT_PATH.'small/');
+
+// gallery info
+define('GALLERY_HOST_PATH', 'http://10.0.0.81/NewsApp'); 
+define('GALLERY_ROOT_PATH', '/admin_gallery/uploads/');
+define('GALLERY_BIG_IMAGE_PATH', GALLERY_HOST_PATH.GALLERY_ROOT_PATH.'big/');
+define('GALLERY_SMALL_IMAGE_PATH', GALLERY_HOST_PATH.GALLERY_ROOT_PATH.'small/');
+define('GALLERY_API_HOST_PATH', 'http://10.0.0.81/NewsApp');
+define('GALLERY_API_ROOT_PATH', '/gallery_api/index.php/service/');
+
+// extra
+//define('ROOT_URL', 'http://10.0.0.81/NewsApp');
+//define('SOURCE_PATH', '/admin_gallery/uploads/');
+//define('BIG_IMG', ROOT_URL.SOURCE_PATH.'big/');
+//define('SMALL_IMG', ROOT_URL.SOURCE_PATH.'small/');
+
+
+
+
+

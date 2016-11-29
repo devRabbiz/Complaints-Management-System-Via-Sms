@@ -1,0 +1,342 @@
+<?php
+
+class Service extends CI_Controller 
+{
+	function __construct()
+	{
+		parent::__construct();
+	//	$this->is_logged_in();
+   // $this->load->model('gallery_m');
+    $this->load->model('service_m');
+    $this->load->library("pagination");
+    $this->load->library ("page_setting");
+	}
+
+	function index()
+	{
+
+	}
+//**************************************************************
+
+	function invalid_complaint()
+	{
+	
+	}
+//--------------------------------------------------------------
+//-------------------------- GALLERY LIST ----------------------
+//--------------------------------------------------------------	
+	function gallery_list()
+	{
+    $limit = 5;
+    $offset=$this->uri->segment(3);
+    $config['total_rows'] = $this->gallery_m->countAllGallery();
+    $config['base_url'] = site_url('/gallery/gallery_list/');
+    $config['per_page'] = $limit;
+    $data=$this->gallery_m->getGalleryAll($limit, $offset);
+    $this->pagination->initialize($config);
+    $data = $this->gallery_m->getGalleryAll();
+    $this->page_setting->Pagination = $this->pagination->create_links();
+    $this->page_setting->control_page( $data );
+	}
+//--------------------------------------------------------------
+//-------------------------- GALLERY LIST ----------------------
+//--------------------------------------------------------------
+//**************************************************************	
+//--------------------------------------------------------------
+//------------------------ GALLERY CREATE ----------------------
+//--------------------------------------------------------------
+	function complaint_add($number,$text)
+	{
+		$text = explode("_",$text);
+	    $customer_id = $this->service_m->getCustomerIdByNumber($number);
+		$machine_code = $text[0];
+		$complaint_code = $text[1];
+		$data['customer_complaint_id'] = $this->page_setting->get_uniq_id("tbl_customer_complaint");
+		$data ['customer_complaint_date_insert'] =  date('Y-m-d H:i:s');
+		$data ['customer_complaint_status'] =  '0';
+		if($customer_id){
+			$data ['customer_id'] =$customer_id;
+		}else{
+			return false;
+		}
+		if($machine_code){
+			$data ['customer_machine_code'] =$machine_code;
+		}else{
+			return false;
+		}
+		if($complaint_code){
+			$data ['complaint_code'] =$complaint_code;
+		}else{
+			return false;
+		}
+		//print_r($data);
+		//exit();
+    $this->service_m->customerComplaint($data);
+	}
+//--------------------------------------------------------------
+//------------------------ GALLERY CREATE ----------------------
+//--------------------------------------------------------------
+//**************************************************************	
+//--------------------------------------------------------------
+//-------------------------- GALLERY EDIT ----------------------
+//--------------------------------------------------------------	
+	function gallery_edit($id="") // just for sample
+	{
+   // echo $id;
+    $gallery_id_decode=$this->page_setting->first_auto_decoded_id;
+    if ($_POST) {
+        // ================  inset Functions and Get ids ==================
+           $data['gallery_tag'] =  $_POST['gallery_tag'] ;
+          $data['gallery_is_visible'] =  $_POST['gallery_is_visible'] ;
+          $datetime = mysql_real_escape_string($_POST['gallery_create_date']);
+          $datetime = strtotime($datetime);
+          $data ['gallery_create_date'] =  date('Y-m-d H:i:s',$datetime);
+       $this->gallery_m->updateGalleryById($data,$gallery_id_decode);
+      if (isset($_FILES['thumbnail_image']) && $_FILES['thumbnail_image']['size'] > 0  ) {
+        if (file_exists("./uploads/big/".$gallery_id_decode.".png")) {
+          unlink("./uploads/big/".$gallery_id_decode.".png");
+        }
+         if (file_exists("./uploads/small/".$gallery_id_decode.".png")) {
+          unlink("./uploads/small/".$gallery_id_decode.".png");
+        }
+        $this->upload_image($gallery_id_decode);
+      }
+    
+       if ($_POST['submit'] == "Save") {
+        $gallery_id_encode=$this->page_setting->first_auto_encoded_id;
+          redirect('gallery/gallery_edit/'.$gallery_id_encode);
+       
+       } else{
+       redirect('gallery/gallery_list');
+       }
+    }
+    $data= $this->gallery_m->getGalleryById($gallery_id_decode);
+    $this->page_setting->control_page( $data ); 
+	}
+//--------------------------------------------------------------
+//-------------------------- GALLERY EDIT ----------------------
+//--------------------------------------------------------------	
+//**************************************************************	
+
+//--------------------------------------------------------------
+//--------- Detete sigle row by id from List Fucntion ----------
+//--------------------------------------------------------------	   
+ 
+    function gallery_delete()
+    {
+      $gallery_id = $this->input->post("gallery_id");
+      //$picture_list = $this->picture_m->getPicturesByGalleryId($gallery_id);
+      $this->page_setting->control_page( $data="" ); 
+    }
+//--------------------------------------------------------------
+//--------- Detete sigle row by id from List Fucntion ----------
+//--------------------------------------------------------------	   
+//**************************************************************
+function gallery_picture_add()
+{
+   $gallery_id = $this->page_setting->first_auto_decoded_id;
+    if ($_POST) {
+    $num = count($_FILES['news_picture']['tmp_name']); // output 8
+     // create image name from gallery_id+picture_id
+      foreach ($_FILES['news_picture']['name'] as $key => $value) {
+         $image_name[] = $value;
+      }
+      $this->load->library("upload_file");
+      $this->upload_file->file_upload($image_name,$gallery_id);
+      $this->page_setting->control_page( $data="" );
+      if ($_POST['submit'] == "Save") {
+       redirect('gallery/gallery_list');
+       } else{
+       $gallery_id = $this->page_setting->first_auto_encoded_id;
+          redirect('gallery/gallery_picture_add/'.$gallery_id);
+       }
+    }
+    if (file_exists('./uploads/'.$gallery_id) ) {
+    
+      // Define the full path to your folder from root
+    $path = "./uploads/".$gallery_id."/small/";
+    // Open the folder
+    $dir_handle = @opendir($path) or die("Unable to open $path");
+  
+    // Loop through the files
+    while ($file = readdir($dir_handle)) {
+  
+    if($file == "." || $file == ".." || $file == "index.php" || $file == ".DS_Store" )
+  
+        continue;
+        $data[] = base_url()."uploads/".$gallery_id."/small/".$file;
+  
+    }
+    if (empty($file)) {
+      $data[]="";
+    }
+    // Close
+    closedir($dir_handle);
+  }else{
+    $data[]="";
+  }
+
+
+   // $data=$this->gallery_m->getGalleryAll();
+  $this->page_setting->control_page( $data ); 
+ 
+    
+  
+
+}
+//**************************************************************
+//**************************************************************
+function gallery_picture_delete()
+{
+   $this->page_setting->control_page( $data="" ); 
+}
+//**************************************************************
+//**************************************************************
+function gallery_title_add()
+{
+   $gallery_id = $this->page_setting->first_auto_decoded_id;
+    if ($_POST) {
+      //print_r($_POST);
+      $data = array('gallery_title' => $_POST['gallery_title'],
+                    'language_id' => $_POST['language_id'],
+                    'gallery_id' => $gallery_id ); 
+      $gallery_title_id = $this->gallery_m->createGalleryTitle($data);
+   if ($_POST['submit'] == "Save") {
+      redirect('gallery/gallery_list');
+    }else{
+      redirect('gallery/gallery_title_add/'.$this->page_setting->first_auto_encoded_id);
+    }
+    }
+     $this->page_setting->detail = $this->gallery_m->getGalleryById($gallery_id);
+    $data= $this->gallery_m->getTitleInGalleryByGalleryId($gallery_id);
+    if(empty($data)){
+    	$language_id[]= "";
+    }else {
+    foreach ($data as $key => $value) {
+      $language_id[] = $value['language_id'];
+    }
+    }
+     $this->page_setting->lang_list = $this->gallery_m->getLanguageList($language_id);
+    
+
+   $this->page_setting->control_page( $data ); 
+}
+//**************************************************************
+//**************************************************************
+function gallery_title_edit()
+{
+   $gallery_title_id = $this->page_setting->first_auto_decoded_id;
+   $encode_id = $this->page_setting->first_auto_encoded_id;
+
+   if ($_POST) {
+    //unset($_POST['submit']);
+    $this->gallery_m->updateGalleryInTitleById($_POST,$gallery_title_id);
+    redirect('gallery/gallery_title_edit/'.$encode_id);
+   }
+   
+    $data= $this->gallery_m->getTitleInGalleryByGalleryTitleId($gallery_title_id);
+   // $this->page_setting->lang_list = $this->gallery_m->getLanguageList();
+ 
+   $this->page_setting->control_page( $data ); 
+}
+//**************************************************************
+//**************************************************************
+function gallery_title_delete()
+{
+   $this->page_setting->control_page( $data="" ); 
+}
+//**************************************************************
+
+//----------------------------------------------------------------------------------------------------------------------
+//------ Upload file and image with deffrent name and extention and many thumbnail of deffrent localtion Fucntion ------
+//----------------------------------------------------------------------------------------------------------------------
+
+function upload_image($image_info)
+{
+  
+  // --- exploding the 'name' and 'extention' of file (resume)
+                    //For Image Upload
+      $config['file_name']= $image_info.".png";
+      $config['upload_path'] = './uploads/';
+      $config['allowed_types'] = 'gif|jpg|png|jpeg';
+      $config['max_size'] = '2000000';
+      $config['maintain_ratio'] = true;
+      $config['max_width']  = '4448';
+      $config['max_height']  = '3300';
+      $this->load->library('upload', $config);
+     if(! $this->upload->do_upload('thumbnail_image')){
+    $e = $this->upload->display_errors();
+    print_r($e);
+}else{
+      $image=$this->upload->data();
+     
+      $new_imgname= $image_info.$image['file_ext'];
+       //change file name
+      $new_imgpath=$image['file_path'].$new_imgname;
+      rename($image['full_path'], $new_imgpath);
+      $main_image_path = './uploads/'.$image['file_name'];
+      //upload main image
+      //print '<pre>';
+      //print_r($image); exit;
+
+    $config1['source_image'] = $image['full_path'];
+    $config1['new_image'] = "./uploads/big/". $image['file_name']; // you can assign your image name and location
+    $config1['allowed_types'] = 'gif|jpg|png|jpeg';
+    $config1['max_size'] = '200000';
+    $config1['maintain_ratio'] = true;
+    $config1['width'] = 665;
+    $config1['height'] = 325;
+
+    $this->load->library('image_lib', $config1);
+    if ( ! $this->image_lib->resize())
+    {
+        echo $this->image_lib->display_errors();
+        return;
+    }
+    $config1['new_image'] = "./uploads/small/". $image['file_name'];
+    $config1['width'] = 220;
+    $config1['height'] = 166;
+    $config1['allowed_types'] = 'gif|jpg|png|jpeg';
+    $config1['max_size'] = '200000';
+  $this->image_lib->clear();
+    $this->image_lib->initialize($config1);
+    if ( ! $this->image_lib->resize())
+    {
+        echo $this->image_lib->display_errors();
+        return;
+    }
+   // $config1['new_image'] = "images/models/"."third". $image['file_name'];
+   // $config1['width'] = 185;
+   // $config1['height'] = 125;
+
+   // $this->image_lib->clear();
+   // $this->image_lib->initialize($config1);
+   // if ( ! $this->image_lib->resize())
+   // {
+   //     echo $this->image_lib->display_errors();
+    //    return;
+   // }
+    //thumbnail creation start
+    unset($config1['new_image']);
+    $config1['create_thumb'] = TRUE;
+
+    $this->image_lib->clear();
+    $this->image_lib->initialize($config1);
+    if ( ! $this->image_lib->resize())
+    {
+        echo $this->image_lib->display_errors();
+        return;
+    }
+
+    //echo "Ok";
+}
+ if (file_exists($main_image_path))
+        {
+          unlink($main_image_path);
+        }
+     // return $image['file_name'];
+}
+
+	
+
+}

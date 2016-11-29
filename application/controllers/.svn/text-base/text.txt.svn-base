@@ -1,0 +1,6 @@
+customer_complaint_id
+customer_id
+customer_machine_code
+complaint_code
+customer_complaint_status
+customer_complaint_date_insert

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/sms_system/!svn/ver/3/Config
+END
+ci_config.php
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/sms_system/!svn/ver/9/Config/ci_config.php
+END
+_ci_config.php
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/sms_system/!svn/ver/1/Config/_ci_config.php
+END
+ci_config_64.php
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/sms_system/!svn/ver/1/Config/ci_config_64.php
+END

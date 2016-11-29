@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/sms_system/!svn/ver/1/application/cache
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/sms_system/!svn/ver/1/application/cache/index.html
+END
+.htaccess
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/sms_system/!svn/ver/1/application/cache/.htaccess
+END
+._.DS_Store
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sms_system/!svn/ver/1/application/cache/._.DS_Store
+END

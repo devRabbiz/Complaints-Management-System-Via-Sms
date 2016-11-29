@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/sms_system/!svn/ver/1/application/errors
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sms_system/!svn/ver/1/application/errors/index.html
+END
+error_404.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sms_system/!svn/ver/1/application/errors/error_404.php
+END
+error_php.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sms_system/!svn/ver/1/application/errors/error_php.php
+END
+error_general.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sms_system/!svn/ver/1/application/errors/error_general.php
+END
+._.DS_Store
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/sms_system/!svn/ver/1/application/errors/._.DS_Store
+END
+error_db.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sms_system/!svn/ver/1/application/errors/error_db.php
+END

@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/sms_system/!svn/ver/6/application/views
+END
+technician_list.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sms_system/!svn/ver/3/application/views/technician_list.php
+END
+compose_for_activation.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sms_system/!svn/ver/8/application/views/compose_for_activation.php
+END
+login_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sms_system/!svn/ver/1/application/views/login_form.php
+END
+machine_code_upload.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sms_system/!svn/ver/10/application/views/machine_code_upload.php
+END
+complaint_code_list.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sms_system/!svn/ver/2/application/views/complaint_code_list.php
+END
+status_code_add.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sms_system/!svn/ver/1/application/views/status_code_add.php
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/sms_system/!svn/ver/1/application/views/index.html
+END
+customer_list.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sms_system/!svn/ver/3/application/views/customer_list.php
+END
+complaint_forword.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sms_system/!svn/ver/8/application/views/complaint_forword.php
+END
+customer_add.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sms_system/!svn/ver/6/application/views/customer_add.php
+END
+signup_successful.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sms_system/!svn/ver/1/application/views/signup_successful.php
+END
+error_404.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sms_system/!svn/ver/1/application/views/error_404.php
+END
+compose_for_customer.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sms_system/!svn/ver/8/application/views/compose_for_customer.php
+END
+status_code_list.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sms_system/!svn/ver/2/application/views/status_code_list.php
+END
+complaint_code_add.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sms_system/!svn/ver/1/application/views/complaint_code_add.php
+END
+technician_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sms_system/!svn/ver/1/application/views/technician_edit.php
+END
+customer_view.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sms_system/!svn/ver/3/application/views/customer_view.php
+END
+technician_add.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sms_system/!svn/ver/1/application/views/technician_add.php
+END
+compose_for_technician.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sms_system/!svn/ver/8/application/views/compose_for_technician.php
+END
+complaint_code_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sms_system/!svn/ver/1/application/views/complaint_code_edit.php
+END
+logged_in_area.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sms_system/!svn/ver/1/application/views/logged_in_area.php
+END
+customer_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sms_system/!svn/ver/6/application/views/customer_edit.php
+END
+signup_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sms_system/!svn/ver/1/application/views/signup_form.php
+END
+status_code_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sms_system/!svn/ver/7/application/views/status_code_edit.php
+END
+._error_404.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sms_system/!svn/ver/1/application/views/._error_404.php
+END
+complaint_list.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sms_system/!svn/ver/8/application/views/complaint_list.php
+END
+dashboard.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sms_system/!svn/ver/1/application/views/dashboard.php
+END

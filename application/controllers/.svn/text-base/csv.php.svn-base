@@ -1,0 +1,40 @@
+<?php
+class Csv extends CI_Controller
+{
+    function __construct()
+    {
+        parent::__construct();
+          //$this->load->model('campus_m');
+          //$this->load->model('user_m');
+          $this->load->model('csv_m');
+          $this->load->library('csvreader');
+          $this->load->library ("page_setting");
+
+   }
+    //================== Page setting Fucntion =====================
+      function index()
+     {
+         $this->student_in_session();
+     }
+//=============================================================
+//--------- Upload Machine code Csv function  -----------    
+//=============================================================     
+       function machine_code_upload()
+     {
+           if ($_POST) {
+              $csv_file = $_FILES['csv'];
+              $filePath = './csv/'.$csv_file['name'];
+              $file_data = $this->csvreader->parse_file($filePath);
+              $query_result = $this->csv_m->addStudentInSessionByCsvfile($file_data);
+              $data = $this->page_setting($file_data);
+              $this->load->view('csv_add', $data);
+           } else {
+             $data = "";
+             $this->page_setting->control_page( $data );
+           }
+     }
+//=============================================================
+//--------- Upload Machine code Csv function  -----------    
+//=============================================================      
+}
+?>
